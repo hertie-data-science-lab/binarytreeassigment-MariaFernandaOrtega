@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 28 15:31:59 2023
 
-@author: Hannah
+@author: Maria Fernanda Ortega and Maria Jose Lee
 """
 
 from linkedbinarytree import LinkedBinaryTree
@@ -29,3 +29,23 @@ class MutableLinkedBinaryTree(LinkedBinaryTree):
         
     def attach(self, p, T1, T2):
         return self.attach(p, T1, T2)
+
+    def preorder(self):
+        return self._preorder()
+
+    def subtree_preorder(self, p):
+        return self._subtree_preorder(p)
+
+    def postorder(self):
+        return self._postorder()
+
+    def subtree_postorder(self, p):
+        return self._subtree_postorder(p)
+
+    def inorder(self):
+        return self._inorder()
+
+    def subtree_inorder(self, p):
+        return self._subtree_inorder(p)
+
+

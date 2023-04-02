@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 28 15:18:23 2023
 
-@author: Hannah
+@author: Maria Fernanda Ortega and Maria Jose Lee
 """
 
 from mlbt import MutableLinkedBinaryTree
@@ -27,6 +27,22 @@ lbt.add_right(r, 7)
 
 
 
+
 print(len(lbt))
 print(lbt.height(lbt.root()))
-print()
+
+print("Pre-order method:")
+for p in lbt.preorder():
+    print(p.element())
+
+print("Post-order method:")
+for node in lbt.postorder():
+    print(node.element())
+
+
+print("In-order method:")
+for p in lbt.inorder():
+    print(p.element())
+
+
+

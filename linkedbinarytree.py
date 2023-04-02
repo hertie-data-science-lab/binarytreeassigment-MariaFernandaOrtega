@@ -2,13 +2,14 @@
 """
 Created on Tue Mar 28 15:15:46 2023
 
-@author: Hannah
+@author: Maria Fernanda Ortega and Maria Jose Lee
 """
 
 from binarytree import BinaryTree
 
 class LinkedBinaryTree(BinaryTree):
     """Linked representation of a binary tree structure."""
+
 
     class _Node:
         __slots__ = '_element', '_parent', '_left', '_right'
@@ -192,5 +193,52 @@ class LinkedBinaryTree(BinaryTree):
             node._right = t2.root
             t2._root = None
             t2._size = 0
-            
+
+    def _preorder(self):
+        """Perform a preorder traversal of the tree."""
+        if not self.is_empty():
+           for p in self._subtree_preorder(self.root( )):
+                yield p
+
+    def _subtree_preorder(self, p):
+        """Generate a preorder traversal of the subtree rooted at p."""
+        yield p
+        for c in self.children(p):
+            for other in self._subtree_preorder(c):
+                yield other
+
+    def _inorder(self):
+        """Perform an inorder traversal of the tree."""
+        if not self.is_empty():
+           for p in self._subtree_inorder(self.root()):
+               yield p
+
+
+    def _subtree_inorder(self, p):
+        """Generate an inorder traversal of the subtree rooted at p."""
+        if self.left(p) is not None:
+            for other in self._subtree_inorder(self.left(p)):
+                yield other
+        yield p
+        if self.right(p) is not None:
+            for other in self._subtree_inorder(self.right(p)):
+                yield other
+
+    def _postorder(self):
+        """Perform a postorder traversal of the tree."""
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+
+    def _subtree_postorder(self, p):
+        """Generate a postorder traversal of the subtree rooted at p."""
+        for c in self.children(p):
+            for other in self._subtree_postorder(c):
+                yield other
+        yield p
+
+
+
+
+
 

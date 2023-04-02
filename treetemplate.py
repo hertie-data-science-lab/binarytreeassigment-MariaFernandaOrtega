@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 28 15:13:42 2023
 
-@author: Hannah
+@author: Maria Fernanda Ortega and Maria Jose Lee
 """
 
 from abc import ABC, abstractmethod
